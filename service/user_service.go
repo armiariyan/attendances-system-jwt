@@ -11,6 +11,7 @@ import (
 	"time"
 
 	"github.com/mashingan/smapping"
+	"golang.org/x/crypto/bcrypt"
 )
 
 type UserService interface {
@@ -92,8 +93,12 @@ func (service *userService) VerifyCredential(userInput dto.LoginDTO) (entity.Use
 		return user, err
 	}
 
+	fmt.Println("userInput.Password -->", userInput.Password)
+	fmt.Println("user.Password -->", user.Password)
+
 	// Compare Password
-	if !helper.ComparePassword(user.Password, []byte(userInput.Password)) {
+	err = bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(userInput.Password))
+	if err != nil {
 		return user, err
 	}
 
