@@ -39,7 +39,7 @@ func main() {
 	attendanceRoutes := r.Group("api/v1", authMiddleware)
 	{
 		attendanceRoutes.POST("/checkin", userController.CheckIn)
-		attendanceRoutes.POST("/checkout", userController.CheckOut)
+		attendanceRoutes.POST("/checkout", checkInMiddleware, userController.CheckOut)
 		attendanceRoutes.GET("/attendances", userController.GetAttendancesHistory)
 	}
 
