@@ -109,7 +109,8 @@ Response error for invalid credential (Status: 401 Unauthorized)
 
 
 # Attendances Routes
-Check in or Check out only can be done if user already login (provide valid jwt token)
+Check in or Check out only can be done if user already login (provide valid jwt token)  
+
 Attendance ID is ATD + 5 random alphanumeric string
 
 ## Check In
@@ -208,7 +209,8 @@ Refer another error to Check In docs above
 
 
 ## Get Attendances History
-Get all attendances history by user id
+Get all attendances history by user id  
+
 For this documentation, i already create couple of attendances before
 
 <b>GET</b>
@@ -267,7 +269,8 @@ Response error empty (Status: 200)
 
 
 # Activities Routes
-Manage activity only can be done if user already login and check in
+Manage activity only can be done if user already login and check in  
+
 Activity ID is ACT + 5 random alphanumeric string
 
 ## Create Activity
@@ -368,7 +371,8 @@ Response success (Status: 200)
 ```
 
 ## Get Activity History By Date
-Get all activity history between two dates.
+Get all activity history between two dates.  
+
 For this documentation, i already create couple of activity before
 
 <b>GET</b>
